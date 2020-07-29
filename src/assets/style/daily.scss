@@ -1,0 +1,717 @@
+@import './mixin.scss';
+
+.page-wrapper{
+    @include divInit(100vw,100vh);
+    display: flex;
+    position: relative;
+
+    @media screen and (min-width:769px){
+        .task-form-box{
+            flex: 1.5 0 0;
+            transition: ease all .4s;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        .task-form{
+            @include divInit(100%,100%,0 0 .58rem 0);
+            overflow-y: auto;
+            background: #fafafa; 
+            position: relative;    
+        }
+        .form-item{
+            @include divInit(100%,auto,.05rem .05rem );
+            background-color: #fff;
+            .form-item-wrapper{
+                @include divInit(100%);
+                display: flex;
+                align-items:center;
+                .item-title{
+                    flex:3;
+                    text-align: right;
+                    color: #555;
+                    font-size: .09rem;
+                }
+                .item-input{
+                    flex: 7;
+                    font-size: 0;
+                    .input-box{
+                        @include divInit(100%, auto ,.03rem .03rem);
+                        .input-ele{
+                            width: 100%;
+                        }
+                         textarea{
+                              min-height: .6rem; 
+                              line-height: .18rem; 
+                              padding:.05rem .05rem;
+                            }
+                    }
+                }
+            }
+
+            &.delay-radio {
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                box-shadow: 0 0 5px rgba(0,0,0,.3) ;
+                .form-item-wrapper{
+                    .item-input{
+                        text-align: center;
+                        .input-box{
+                            @include divInit(.9rem,auto,.05em .05rem  );
+                            font-size: .12rem;
+                            .radio-ele{display: none;}
+                            label{
+                                display: block;
+                                @include divInit(100%,.35rem);
+                                border-radius: .03rem;
+                                text-align: center;
+                                line-height: .35rem;
+                                background: #eee;
+                                color: #555;
+                                cursor: pointer;
+                                transition: ease all .4s;
+                                font-size: .09rem;
+                                &.checked{
+                                    background: $ac_color;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        .form-task-list-input-box{
+            @include divInit(100%);
+
+            .form-task-list-input{
+                display: flex;
+                align-items: top;
+                flex-wrap: wrap;
+            }
+            .form-item{
+                flex: 49% 0 0;
+                margin: .05rem 0.5%;
+                background: #fff;
+                border-radius: .05rem;
+                box-shadow: 0 0 .05rem #ccc;
+                padding-top:.22rem;
+                position: relative;
+                .task-delete-btn{
+                    position: absolute;
+                    top:.03rem;
+                    right: .03rem;
+                }
+                .item-input{  
+                    .input-box{
+                        .task-time-input{
+                            width: 70%;
+                            margin-right: 1%;
+                        }
+                        .select-ele{width: 29%;}
+                    }
+                }
+            }
+            .subtask-input-list-box{
+                @include divInit(100%,auto,.02rem 0rem);
+                .subtask-input-list{
+                @include divInit(100%,auto,0 0);
+                border-radius: .05rem   ;
+                    background: #fff;
+                    .subtask-input-item{
+                        // background: #fff;
+                        .subtask-input{
+                            width: 95%;
+                        }
+                        .subtask-input-ele{
+                            height: .3rem;
+                            line-height: .3rem;
+                        }
+                        .btn-box{
+                            width:5%;
+                            padding: 0 0  0 0;
+                            text-align: center;
+                        }
+                    }
+                    
+
+                }
+            }
+            .add-task{
+                width: 60%;
+                padding: .1rem .1rem;
+                text-align: right;
+                position: fixed;
+                bottom: 0;
+                background: #fafafa;
+                .add-task-btn{
+                    @include divInit(50%,.28rem);
+                    line-height: .28rem;
+                    background: $ac_color;
+                    color:#fff;
+                }
+                
+            }
+            .add-subtask{
+                width: 100%;
+                text-align: right;
+            }
+            .add-subtask-btn{
+                @include divInit(.3rem,.25rem);
+                line-height: .235rem;
+                background: $ac_color;
+                color:#fff;
+            }
+            
+            
+        }
+        .task-format-content-box{
+            width: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 0 .08rem #666;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #555;
+            opacity: 0;
+            transition: ease all .4s ;
+            position: sticky;
+            top: 0;
+            right: 0;
+            padding: 0 0 .58rem 0;
+            box-sizing: border-box;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            z-index: 10;
+            position: relative;
+            &.visible{
+                width: auto;
+                flex: 1 0 0;
+                opacity: 1;
+            }
+            .task-format-content{
+                @include divInit(100%,100%);
+                font-size: .12rem;
+                overflow-x: hidden;
+                overflow-y: auto;
+                position: relative;
+                .content-wrapper{
+                    @include divInit(100%,auto,.1rem .1rem);
+                    .task-date{
+                        @include divInit(100%,auto,.1rem .05rem .1rem);
+                        color: $ac_color;
+                        font-size: .13rem;
+                        font-weight: bold;
+                        position: sticky;
+                        top: 0;
+                        background: #fff;
+                    }
+                }
+                
+            }
+        }
+
+        
+    }
+
+
+    @media screen and(max-width:768px){
+        .task-form-box{
+            @include divInit(90%,auto,.1rem 0, 0 auto);
+            .task-form{
+                @include divInit();
+                border: 1px solid #ccc;
+                background: #fafafa;
+                .form-item{
+                    @include divInit(100%,auto,.1rem .05rem );
+                    align-items: center;
+                    position: relative;
+                    .form-item-wrapper{
+                        @include divInit(100%);
+                        display: flex;
+                        align-items:center;
+                        .item-title{
+                            flex:3;
+                            text-align: right;
+                            color: #555;
+                            font-size: .09rem;
+                        }
+                        .item-input{
+                            flex: 7;
+                            font-size: 0;
+                            .input-box{
+                                @include divInit(100%, auto ,.03rem .03rem);
+                                .input-ele{
+                                    width: 100%;
+                                }
+                                 textarea{
+                                      min-height: .6rem; 
+                                      line-height: .18rem; 
+                                      padding:.05rem .05rem;
+                                    }
+                            }
+                        }
+                    }
+                    
+                    
+                    &.delay-radio {
+                        .form-item-wrapper{
+                            .item-input{
+                                .input-box{
+                                    @include divInit(.9rem,auto,.05em .05rem  );
+                                    font-size: .12rem;
+                                    .radio-ele{display: none;}
+                                    label{
+                                        display: block;
+                                        @include divInit(100%,.35rem);
+                                        border-radius: .03rem;
+                                        text-align: center;
+                                        line-height: .35rem;
+                                        background: #eee;
+                                        color: #555;
+                                        cursor: pointer;
+                                        transition: ease all .4s;
+                                        font-size: .09rem;
+                                        &.checked{
+                                            background: $ac_color;
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+    
+                    
+                    
+                }
+                .form-task-list-input-box{
+                    @include divInit();
+                    .form-item{
+                        width: 95%;
+                        margin: .05rem auto;
+                        background: #fff;
+                        border-radius: .05rem;
+                        box-shadow: 0 0 .05rem #ccc;
+                        padding-top:.22rem;
+                        .task-delete-btn{
+                            position: absolute;
+                            top:.03rem;
+                            right: .03rem;
+                        }
+                        .item-input{  
+                            .input-box{
+                                .task-time-input{
+                                    width: 70%;
+                                    margin-right: 1%;
+                                }
+                                .select-ele{width: 29%;}
+                            }
+                        }
+                    }
+                    .subtask-input-list-box{
+                        @include divInit(100%,auto,.02rem 0rem);
+                        .subtask-input-list{
+                        @include divInit(100%,auto,0 0);
+                        border-radius: .05rem   ;
+                            background: #fff;
+                            .subtask-input-item{
+                                // background: #fff;
+                                .subtask-input{
+                                    width: 95%;
+                                }
+                                .subtask-input-ele{
+                                    height: .3rem;
+                                    line-height: .3rem;
+                                }
+                                .btn-box{
+                                    width:5%;
+                                    padding: 0 0  0 0;
+                                    text-align: center;
+                                }
+                            }
+                            
+    
+                        }
+                    }
+                    .btn-box{
+                        width: 100%;
+                        padding: .1rem .1rem;
+                        text-align: right;
+                        .add-task-btn{
+                            @include divInit(.6rem,.28rem);
+                            line-height: .28rem;
+                            background: $ac_color;
+                            color:#fff;
+                        }
+                        .add-subtask-btn{
+                            @include divInit(.25rem,.25rem);
+                            line-height: .235rem;
+                            background: $ac_color;
+                            color:#fff;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .task-format-content-box{
+            @include divInit(80%);
+            max-width: 500px;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            box-shadow: 0 0 .08rem #666;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #555;
+            bottom: -50%;
+            opacity: 0;
+            transition: ease all .4s ;
+            &.visible{
+                bottom: .1rem;
+                opacity: 1;
+            }
+            .task-format-content{
+                @include divInit();
+                font-size: .12rem;
+                .content-wrapper{
+                    @include divInit(100%,auto,.1rem .1rem);
+                    .task-date{
+                        @include divInit(100%,auto,.05rem .05rem);
+                        color: $ac_color;
+                        font-size: .13rem;
+                        font-weight: bold;
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    
+}
+
+.input-box{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    @include divInit(auto,auto,.03rem .05rem)
+}
+.input-ele{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    @include divInit(auto,.35rem,0 0.28rem 0 0.08rem!important);
+    line-height: .35rem;
+    outline:none;
+    border:1px solid #ccc;
+    border-radius: .03rem;
+    background: #fff;
+    font-size: .09rem;
+    color: #555;
+    &:focus{
+        box-shadow: 0 0 .05rem rgba(0,0,0,.5);
+    }
+   
+}
+.clear-btn{
+    position: absolute;
+    top: 50%;
+    right: .1rem;
+    transform: translateY(-50%);
+    color: #777;
+    @include divInit(.2rem,.2rem);
+    text-align: center;
+    cursor: pointer;
+    font-size: .1rem;
+    border-radius: .1rem;
+    line-height: .2rem;
+}
+
+.select-ele{
+    display: inline-block;
+    vertical-align: middle;
+    @include divInit(auto,.35rem,0 .08rem);
+    line-height: .35rem;
+    outline:none;
+    border:1px solid #ccc;
+    border-radius: .03rem;
+    background: #fff;
+    font-size: .1rem;
+    color: #555;
+    &:focus{
+        box-shadow: 0 0 .05rem rgba(0,0,0,.5);
+    }
+}
+.btn-box{
+    display: inline-block;
+    vertical-align: middle;
+    @include divInit(auto,auto);
+}
+.btn{
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: .03rem;
+    color:#555;
+    text-align: center;
+    cursor: pointer;
+    font-size: .09rem;
+    background:#fafafa;
+    &.delete-btn{
+        background: #ff5358;   
+        color: #fff;
+        @include divInit(.1rem,.1rem);
+        text-align: center;
+        cursor: pointer;
+        font-size:0;
+        font-weight: bold;
+        border-radius: 100%;
+        line-height: .1rem;
+        &:after{
+            content:"";
+            display: inline-block;
+            vertical-align: middle;
+            width: 50%;
+            height:1px;
+            background: #fff;
+        }
+    }
+    &.task-delete-btn{
+        background: #ff5358;   
+        color: #fff;
+        @include divInit(.18rem,.18rem);
+        text-align: center;
+        cursor: pointer;
+        font-size:.08rem;
+        font-weight: bold;
+        border-radius: 50%;
+        line-height: .17rem;
+        
+    }
+    &.copy-task-contents{
+        position: fixed;
+<<<<<<< HEAD:react-demo/src/assets/style/daily.scss
+        bottom: .1rem;
+        right: 20px;
+        @include divInit(.5rem);
+=======
+        bottom: .05rem;
+        right: .1rem;
+        @include divInit(.5rem , .5rem);
+>>>>>>> f38cd2c1880e1d2a2dc2b0017dce2c68f9a67add:src/assets/style/daily.scss
+        background: #555;
+        color: #fff;
+        font-size: 12px;
+        line-height: .25rem;
+        z-index: 100;
+        @media screen and (min-width:769px){
+            bottom: .1rem;    
+            right: .3rem;
+        }
+    }
+    &.showContent-btn{
+        position: fixed;
+<<<<<<< HEAD:react-demo/src/assets/style/daily.scss
+        bottom: .3rem;
+        z-index: 100;
+        right: 20px;
+        @include divInit(.5rem);
+        background: $react_color;
+        color: #fff;
+        font-size: 12px;
+        line-height: .25rem;
+        @media screen and (min-width:769px){
+            bottom: .1rem;    
+            right: .9rem;
+=======
+        bottom: .6rem;
+        right: .1rem;
+        @include divInit(.5rem , .5rem);
+        background: $react_color;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 50%;
+        line-height: .5rem;
+    }
+}
+.page-wrapper{
+    @include divInit(100vw,100vh,0 0 1rem 0);
+    .task-form-box{
+        @include divInit(90%,100%,.1rem 0, 0 auto);
+        @include mScroll();
+        .task-form{
+            @include divInit();
+            border: 1px solid #ccc;
+            background: #fafafa;
+            .form-item{
+                @include divInit(100%,auto,.1rem .05rem );
+                align-items: center;
+                position: relative;
+                .form-item-wrapper{
+                    @include divInit(100%);
+                    display: flex;
+                    align-items:center;
+                    .item-title{
+                        flex:3;
+                        text-align: right;
+                        color: #555;
+                        font-size: .09rem;
+                    }
+                    .item-input{
+                        flex: 7;
+                        font-size: 0;
+                        .input-box{
+                            @include divInit(100%, auto ,.03rem .03rem);
+                            .input-ele{
+                                width: 100%;
+                            }
+                             textarea{
+                                  min-height: .6rem; 
+                                  line-height: .18rem; 
+                                  padding:.05rem .05rem;
+                                }
+                        }
+                    }
+                }
+                
+                
+                &.delay-radio {
+                    .form-item-wrapper{
+                        .item-input{
+                            .input-box{
+                                @include divInit(.9rem,auto,.05em .05rem  );
+                                font-size: .12rem;
+                                .radio-ele{display: none;}
+                                label{
+                                    display: block;
+                                    @include divInit(100%,.35rem);
+                                    border-radius: .03rem;
+                                    text-align: center;
+                                    line-height: .35rem;
+                                    background: #eee;
+                                    color: #555;
+                                    cursor: pointer;
+                                    transition: ease all .4s;
+                                    font-size: .09rem;
+                                    &.checked{
+                                        background: $ac_color;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                
+
+                
+                
+            }
+            .form-task-list-input-box{
+                @include divInit();
+                .form-item{
+                    width: 95%;
+                    margin: .05rem auto;
+                    background: #fff;
+                    border-radius: .05rem;
+                    box-shadow: 0 0 .05rem #ccc;
+                    padding-top:.22rem;
+                    .task-delete-btn{
+                        position: absolute;
+                        top:.03rem;
+                        right: .03rem;
+                    }
+                    .item-input{  
+                        .input-box{
+                            .task-time-input{
+                                width: 70%;
+                                margin-right: 1%;
+                            }
+                            .select-ele{width: 29%;}
+                        }
+                    }
+                }
+                .subtask-input-list-box{
+                    @include divInit(100%,auto,.02rem 0rem);
+                    .subtask-input-list{
+                    @include divInit(100%,auto,0 0);
+                    border-radius: .05rem   ;
+                        background: #fff;
+                        .subtask-input-item{
+                            // background: #fff;
+                            .subtask-input{
+                                width: 95%;
+                            }
+                            .subtask-input-ele{
+                                height: .3rem;
+                                line-height: .3rem;
+                            }
+                            .btn-box{
+                                width:5%;
+                                padding: 0 0  0 0;
+                                text-align: center;
+                            }
+                        }
+                        
+
+                    }
+                }
+                .btn-box{
+                    width: 100%;
+                    padding: .1rem .1rem;
+                    text-align: right;
+                    .add-task-btn{
+                        @include divInit(.6rem,.28rem);
+                        line-height: .28rem;
+                        background: $ac_color;
+                        color:#fff;
+                    }
+                    .add-subtask-btn{
+                        @include divInit(.25rem,.25rem);
+                        line-height: .235rem;
+                        background: $ac_color;
+                        color:#fff;
+                    }
+                }
+                
+            }
+        }
+    }
+    .task-format-content-box{
+        @include divInit(80%);
+        max-width: 500px;
+        position: fixed;
+        left:.1rem;
+        bottom: .1rem;
+        background: #fff;
+        box-shadow: 0 0 .08rem #666;
+        border-radius: 5px;
+        box-shadow: 0 0 10px #555;
+        left: -50%;
+        opacity: 0;
+        transition: ease all .3s ;
+        &.visible{
+            left: .1rem;
+            opacity: 1;
+        }
+        .task-format-content{
+            @include divInit();
+            font-size: .12rem;
+            .content-wrapper{
+                @include divInit(100%,auto,.1rem .1rem);
+                .task-date{
+                    @include divInit(100%,auto,.05rem .05rem);
+                    color: $ac_color;
+                    font-size: .13rem;
+                    font-weight: bold;
+                }
+            }
+            
+>>>>>>> f38cd2c1880e1d2a2dc2b0017dce2c68f9a67add:src/assets/style/daily.scss
+        }
+    }
+}
