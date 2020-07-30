@@ -66,30 +66,7 @@
     cursor: pointer;
     font-size: .09rem;
     background:#fafafa;
-<<<<<<< HEAD:react-demo/src/assets/style/common.scss
    
-=======
-    &.delete-btn{
-        background: #ff5358;   
-        color: #fff;
-        @include divInit(.1rem,.1rem);
-        text-align: center;
-        cursor: pointer;
-        font-size:0;
-        font-weight: bold;
-        border-radius: 100%;
-        line-height: .1rem;
-        &:after{
-            content:"";
-            display: inline-block;
-            vertical-align: middle;
-            width: 50%;
-            height:1px;
-            background: #fff;
-        }
-    }
-    
->>>>>>> f38cd2c1880e1d2a2dc2b0017dce2c68f9a67add:src/assets/style/common.scss
 }
 .page-wrapper{
     font-size: .14rem;

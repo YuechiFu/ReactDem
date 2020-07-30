@@ -15,12 +15,7 @@ export default class Main extends React.Component {
     render(){
         return(
             <div className="container"> 
-<<<<<<< HEAD:react-demo/src/components/main/main.jsx
                 <DailyReport></DailyReport>
-=======
-                <Currency></Currency>
-                {/* <Daily></Daily> */}
->>>>>>> f38cd2c1880e1d2a2dc2b0017dce2c68f9a67add:src/components/main/main.jsx
             </div>
             
         )
