@@ -29,13 +29,13 @@ $fontColor: #3a7ce8;
 $ac_color : #3a7ce8;
 $react_color : rgb(97, 218, 251);
 
-.input-box{
+.input-box,.select-box{
     position: relative;
     display: inline-block;
     vertical-align: middle;
     @include divInit(auto,auto,.03rem .05rem)
 }
-.input-ele{
+.input-ele,.select-ele{
     position: relative;
     display: inline-block;
     vertical-align: middle;

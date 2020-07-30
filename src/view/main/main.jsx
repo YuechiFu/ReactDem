@@ -1,7 +1,5 @@
 import "../../assets/style/main.scss";
 import React from "react";
-import Daily from "../daily/daily";
-import Currency from "../currency/currency";
 import ThreeCanvas from "@components/three/threeCanvas";
 import DailyReport from "@components/daily/dailyReport"
 

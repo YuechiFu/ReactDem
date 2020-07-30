@@ -1,5 +1,6 @@
 import React from "react";  
-import Main from "./components/main/main"
+import Main from "@view/main/main"
+import Report from "@view/report/report";
 class App extends React.Component{
   // eslint-disable-next-line 
   constructor(){
@@ -31,7 +32,8 @@ class App extends React.Component{
     window.addEventListener("resize",self.remInit);
 
     return(
-    <Main></Main>
+    // <Main></Main>
+    <Report> </Report>
   )}
 }
 export default App;
