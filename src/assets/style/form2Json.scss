@@ -1,0 +1,183 @@
+@import './mixin.scss';
+body{
+  overflow-x: hidden;
+}
+.page-wrapper{
+}
+#copy-json-target{
+  padding: .1rem .1rem;
+  margin-top: .1rem;
+  position: sticky;
+  bottom: 0;
+  font-size: 12px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,.4);
+  color: $ac_color;
+  max-height: 2rem;
+  overflow: auto;
+}
+.json-content-box{
+  flex:0.6 0 0 ;
+  box-sizing: border-box;
+  padding: .1rem .1rem;
+  overflow: auto;
+  font-size: .12rem;
+  background-color: #eee;
+  color: #333;
+  border-left: 1px solid #ccc;
+  word-break: break-all;
+  line-height: .18rem;
+
+  .warning-content{
+    @include divInit(100,auto,.05rem .05rem , 0 0 .05rem 0);
+    background-color: rgba(255,100,100,.6);
+    font-size: 12px;
+  }
+  .json-format-content{
+    @include divInit(100%,auto,.1rem .1rem);
+    max-height: 2rem;
+    overflow: auto;
+    background-color: #fafafa;
+    line-height: .20rem;
+    font-size: 12px;
+    padding: .1rem .1rem;
+    word-break: break-all;
+    .json-start,.json-end{background-color: #eee;}
+    .json-item{
+      padding-left: .1rem;
+      &:nth-child(2n){background-color: rgba(0,195,255, .1);}
+      &:nth-child(2n+1){background-color: rgba(0,195,255, .2);}
+    }
+  }
+}
+.form-box{
+  flex: 1 0 0;
+  height: 100%;
+  overflow: auto;
+  form{
+    @include divInit(100%,auto,.1rem .1rem);
+    .sku-input-list{
+      @include divInit(100%,auto,0 0  .5rem 0);
+      .sku-input-relate{
+        @include divInit();
+        font-size: 0;
+        display: flex;
+        align-items: center;
+        overflow: auto;
+        .seq{
+          flex: 18px 0 0;
+          margin-right: .05rem;
+          height:18px;
+          line-height: 19px;
+          text-align: center;
+          font-size: 10px;
+          background-color: $ac_color;
+          color: #fff;
+          border: 1px solid $ac_color;
+          border-radius: 50%;
+        }
+        .del{
+          flex: auto 0 0;
+          padding: .05rem .05rem;
+          text-align: center;
+          font-size: 10px;
+          background-color: #ff3355;
+          color: #fff;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+        .sku-input{
+          flex: 1 0 0;
+          font-size: .12rem;
+          padding: 0.05rem .05rem;
+          color: $ac_color;
+          .input-box{
+            @include divInit();
+            .input-ele{
+              @include divInit();
+            }
+          }
+        }
+        .product-title-input{
+          flex: 3 0 0;
+          font-size: .12rem;
+          color: #CCC;
+          padding: 0.05rem .05rem;
+          .input-box{
+            @include divInit();
+            .input-ele{
+              @include divInit();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bottom-box{
+  @include divInit(100vw);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 .06rem rgba(0,0,0,.4);
+}
+
+.add-sku-input-box{
+  display: flex;
+  flex: 1.5 0 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  .add-sku-input-btn{
+    font-size: .13rem;
+    flex:  50% 0 0;
+    .btn{
+      @include divInit(100%,.28rem);
+      line-height: .28rem;
+      background: $ac_color;
+      color:#fff;
+    }
+   
+  }
+  .add-qty-select{
+    font-size: .12rem;
+    flex:  20% 0 0;
+    min-width: 40px;
+    .select-box{
+      width: 100%;
+      select{
+        @include divInit(100%,.28rem,0 .03rem);
+        cursor: pointer;
+        font-size: 12px;
+        text-align: center;
+        
+      }
+    }
+  }
+}
+
+.json-opera-box{
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: flex-end;
+  .btn{
+    flex: .5rem 0 0;
+    margin: 0 .05rem ;
+    height: .28rem;
+    line-height: .28rem;
+    color:#fff;
+    text-align: center;
+    &.show-json-data{
+      background-color: $react_color;
+    }
+    &.copy-json-data{
+      background-color: $ac_color;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from "react";  
 import Main from "@view/main/main"
 import Report from "@view/report/report";
+import Form2Json from "@view/form2Json/form2Json";
 class App extends React.Component{
   // eslint-disable-next-line 
   constructor(){
@@ -32,8 +33,10 @@ class App extends React.Component{
     window.addEventListener("resize",self.remInit);
 
     return(
-    // <Main></Main>
-    <Report> </Report>
-  )}
+      // <Main></Main>
+      // <Report> </Report>
+      <Form2Json></Form2Json>
+    )
+  }
 }
 export default App;

@@ -4,21 +4,22 @@ export default class Input extends React.Component{
         super(props);
     }
     changeValue(e){
-        let val = e.target.value || ''  ;
+        let val = e.target.querySelector("option:checked").value || ''  ;
         this.props.onChange(val)
     }
     render(){
         return(
-            <div className="input-box">
-                <select type="text" className="select-ele input-ele"  
-                    value={this.props.value} 
-                    onChange={this.changeValue.bind(this,false)}
+            <div className="select-box">
+                <select type="text" className="select-ele "  
+                    value={this.props.value}
+                    onChange={this.changeValue.bind(this)}
                     id={this.props.id || ''}
                 >
                      {
                         this.props.options && this.props.options.length > 0 && 
                         this.props.options.map((item,index)=>{
-                            return( <option value={item.value} key={index}>{item.title}</option>)
+                            return( 
+                                <option value={item.value} key={index}>{item.title}</option>)
                         })
                     }
                 </select>

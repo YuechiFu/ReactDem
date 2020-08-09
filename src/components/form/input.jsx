@@ -5,6 +5,7 @@ export default class Input extends React.Component{
     }
     changeValue(isClear,e){
         let val = isClear ? '' : e.target.value  ;
+        val = val.replace(/^\s+|\s+$/,'');
         this.props.onChange(val)
     }
     render(){

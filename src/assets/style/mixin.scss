@@ -35,11 +35,29 @@ $react_color : rgb(97, 218, 251);
     vertical-align: middle;
     @include divInit(auto,auto,.03rem .05rem)
 }
-.input-ele,.select-ele{
+.input-ele{
     position: relative;
     display: inline-block;
     vertical-align: middle;
     @include divInit(auto,.35rem,0 .08rem);
+    line-height: .35rem;
+    outline:none;
+    border:1px solid #ccc;
+    border-radius: .03rem;
+    background: #fff;
+    font-size: .09rem;
+    color: #555;
+    &:focus{
+        box-shadow: 0 0 .05rem rgba(0,0,0,.5);
+    }
+   
+}
+
+.select-ele{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    @include divInit(auto,.35rem,0 .03rem);
     line-height: .35rem;
     outline:none;
     border:1px solid #ccc;
@@ -58,12 +76,16 @@ $react_color : rgb(97, 218, 251);
     right: .1rem;
     transform: translateY(-50%);
     color: #777;
-    @include divInit(.2rem,.2rem);
+    @include divInit(auto,auto,.02rem .05rem);
     text-align: center;
     cursor: pointer;
     font-size: .1rem;
-    border-radius: .1rem;
-    line-height: .2rem;
+    border-radius: .03rem;
+    transition: ease all .3s;
+    &:hover{
+        color: #ffffff;
+        background-color:rgba(245,100,100,.9);
+    }
 }
 
 .select-ele{
