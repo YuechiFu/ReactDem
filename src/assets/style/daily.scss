@@ -141,6 +141,7 @@
             .add-task{
                 width: 60%;
                 padding: .1rem .1rem;
+                font-size: 0;
                 text-align: right;
                 position: fixed;
                 bottom: 0;
@@ -169,10 +170,9 @@
         .task-format-content-box{
             width: 0;
             height: 100%;
+            padding: .1rem;
             overflow: hidden;
             background: #fff;
-            box-shadow: 0 0 .08rem #666;
-            border-radius: 5px;
             box-shadow: 0 0 10px #555;
             opacity: 0;
             transition: ease all .4s ;
@@ -181,9 +181,11 @@
             right: 0;
             padding: 0 0 .58rem 0;
             box-sizing: border-box;
-            box-shadow: 0 0 5px rgba(0,0,0,0.5);
             z-index: 10;
             position: relative;
+            font-size: 0.08rem;
+            color: #ccc;
+            background-color: #333;
             &.visible{
                 width: auto;
                 flex: 1 0 0;
@@ -191,20 +193,22 @@
             }
             .task-format-content{
                 @include divInit(100%,100%);
-                font-size: .12rem;
+                font-size: 0.08rem;
                 overflow-x: hidden;
                 overflow-y: auto;
                 position: relative;
+                *{
+                    font-size: 12px;}
                 .content-wrapper{
                     @include divInit(100%,auto,.1rem .1rem);
                     .task-date{
                         @include divInit(100%,auto,.1rem .05rem .1rem);
                         color: $ac_color;
-                        font-size: .13rem;
+                        font-size: 0.08rem;
                         font-weight: bold;
                         position: sticky;
                         top: 0;
-                        background: #fff;
+                        color: #ccc;
                     }
                 }
                 
@@ -370,20 +374,23 @@
             bottom: -50%;
             opacity: 0;
             transition: ease all .4s ;
+            background-color: #333;
+            color: #fff;
             &.visible{
                 bottom: .1rem;
                 opacity: 1;
             }
             .task-format-content{
                 @include divInit();
-                font-size: .12rem;
+                font-size: .08rem;
                 .content-wrapper{
                     @include divInit(100%,auto,.1rem .1rem);
                     .task-date{
                         @include divInit(100%,auto,.05rem .05rem);
-                        color: $ac_color;
-                        font-size: .13rem;
+                        color: #fff;
+                        font-size: .08rem;
                         font-weight: bold;
+
                     }
                 }
                 
@@ -496,7 +503,7 @@
         bottom: .1rem;
         right: 20px;
         @include divInit(.5rem);
-        background: #555;
+        background: $ac_color;
         color: #fff;
         font-size: 12px;
         line-height: .25rem;
@@ -508,7 +515,7 @@
     }
     &.showContent-btn{
         position: fixed;
-        bottom: .3rem;
+        bottom: .45rem;
         z-index: 100;
         right: 20px;
         @include divInit(.5rem);

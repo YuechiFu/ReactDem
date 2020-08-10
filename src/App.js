@@ -34,8 +34,8 @@ class App extends React.Component{
 
     return(
       // <Main></Main>
-      // <Report> </Report>
-      <Form2Json></Form2Json>
+      <Report> </Report>
+      // <Form2Json></Form2Json>
     )
   }
 }

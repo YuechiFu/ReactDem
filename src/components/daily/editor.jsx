@@ -235,7 +235,7 @@ export default class Editor extends React.Component{
                                                 <div className="task-item-time" >◉ 耗时<span> : </span>{item.time}h</div>
                                                 <div className="task-item-result">
                                                     <span>◉ 量化产出 : {item.resultContent}</span>
-                                                    {item.subtasks.length && <ul>
+                                                    {item.subtasks.length > 0 && <ul>
                                                     <p><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>-------</p>
                                                         {
                                                             item.subtasks.map((subItem,subIndex)=>(
